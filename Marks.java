@@ -8,13 +8,14 @@ class WrongMarkException extends Exception {
 
 class Marks {
     public static void main(String[] args) {
-        int[] marks = new int[20];
+        int[] marks = new int[20]; int temp;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 20 marks: ");
         try {
             for (int i = 0; i<20; i++) {
-                marks[i] = sc.nextInt();
-                if (marks[i]<0 || marks[i]>100) throw new WrongMarkException();
+                temp = sc.nextInt();
+                if (temp<0 || temp>100) throw new WrongMarkException();
+                else marks[i] = temp;
             }
         } catch (WrongMarkException e) {
             System.out.println("Exception caught " + e);
@@ -24,5 +25,5 @@ class Marks {
             System.out.println("Sum is: " +sum);
             sc.close();
         }
-    }
+    } 
 }
